@@ -7,20 +7,6 @@
 	font-style: normal;
 }
 
-input
-{
-	padding-top: 4px;
-	font-size: 1.2em;
-	border: none;
-	background-color: #cccdc6;
-	width: 350px;
-	padding-left: 12px;
-	color:#262626;
-}
-input:focus
-{
-	outline: none;
-}
 body
 {
 	background-color: #e3e3e3;
@@ -72,7 +58,7 @@ section
 	padding:15px;
 	color:#e3e3e3;
 	text-decoration: none;
-	border: 0.1em solid #e3e3e3;
+	border: 0.14em solid #e3e3e3;
 	line-height:0;
 }
 .btnConnexion:hover

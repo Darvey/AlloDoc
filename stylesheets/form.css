@@ -1,5 +1,22 @@
 /* page de css pour les elements de formulaire */
 
+
+input
+{
+	margin-bottom: 12px;
+	font-size: 1em;
+	border: none;
+	background-color: #cccdc6;
+	width: 350px;
+	padding-left: 12px;
+	color:#262626;
+	height: 32px;
+}
+input:focus
+{
+	outline: none;
+}
+
 /* ____________ BLOC RECHERCHE _____________*/
 
 .blocRecherche
@@ -13,9 +30,12 @@
 	color: #262626;
 }
 
+.blocRecherche input{
+ 	margin-bottom: 0px;
+}
+
 .blocRecherche tr
 {
-	height: 40px;
 	background-color: #CCCDC6;
 	border:none;
 	display: inline-block;
@@ -40,9 +60,8 @@ select
 	padding-left: 10px;
 	min-width: 180px;
 	margin: 0px;
-	height: 42px;
-	font: 1.2em "Helvetica";
-	font-weight: lighter;
+	height:46px;
+	font: 1em "Helvetica";
 	color: #e3e3e3;
 
 	border-radius: 0px;
@@ -60,4 +79,21 @@ select
 
 select:focus {
     outline: none;
+}
+
+/* ____________ BLOC CONNEXION _____________*/
+
+#form-connect{
+		position: relative;
+		margin-top:20%;
+		width: 300px;
+		margin-left:auto;
+		margin-right:auto;
+		font : 1em "Otama";
+		text-align: left;
+}
+
+.bloc-connect input{
+	display: inline-block;
+	vertical-align:middle;
 }
