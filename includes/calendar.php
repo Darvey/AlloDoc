@@ -55,7 +55,7 @@ function calendarHead($dates){
 	echo '</th>';
 
 	for($i=0;$i<7;$i++){
-		echo '<th>'.$strDays[$i].'<br><p>'.date('d',$dates[$i]).'</p></th>';	
+		echo '<th>'.$strDays[$i].'<br><p>'.date('d',$dates[$i]).'</p></th>';
 	}
 		echo '<th>';
 			echo '<a class ="nextWeek" href="'.$_SERVER['PHP_SELF'].'?d='.$nextWeek.'&amp">></a>';
@@ -82,12 +82,12 @@ function displayCalendarWeek($_fDay = null)
 	}
 
 	calendarHead($dates);
-	
+
 	echo '<tbody class = "calendar-body">';
 	echo 	'<tr>';
 	foreach($dates as $_d)
 	{
-		echo'<td>'; 
+		echo'<td>';
 		$events = getHorairesDispo(date('d',$_d),date('m',$_d),date('Y',$_d));
 		foreach ($events as $e){
 			echo '<a class = "sHoraire" href="includes/recherche.php">'.tohm($e['h_time']).'</a><br>';
