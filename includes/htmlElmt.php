@@ -8,6 +8,7 @@ function displayHead($pageName)
 	echo '	<meta charset="utf-8">';
 	echo '	<title>'.$pageName.'</title>';
 	echo '	<link rel="stylesheet" href="stylesheets/calendar.css"/>';
+	echo '	<link rel="stylesheet" href="stylesheets/form.css"/>';
 	echo '</head>';
 }
 
