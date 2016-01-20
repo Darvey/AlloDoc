@@ -15,7 +15,7 @@ function displayHead($pageName)
 function displayHeader()
 {
 	echo '<header>';
-	echo '<div class = "title">Allodoc.</div>';
+	echo '<div class = "title">  <a class="btnAccueil" href="index.php" >Allodoc. </a></div>';
 	echo '<a class = "btnConnexion" href="connect.php">Connexion</a>';
 	echo '</header>';
 }

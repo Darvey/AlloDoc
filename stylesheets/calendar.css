@@ -49,6 +49,12 @@ section
 	height: 260px;
 	width: 100%;
 }
+
+.btnAccueil
+{
+	color:#e3e3e3;
+	text-decoration: none;
+}
 .btnConnexion
 {
 	font: 1em "Helvetica" , courier;

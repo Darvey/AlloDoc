@@ -2,7 +2,7 @@
 
 	require_once 'includes/htmlElmt.php';
 
-	displayHead("acceuil");
+	displayHead("Acceuil");
 	displayHeader();
 ?>
 

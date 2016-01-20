@@ -1,7 +1,7 @@
 <?php
   require_once 'includes/htmlElmt.php';
 
-  displayHead("connect");
+  displayHead("Connect");
   echo '<body>';
   displayHeader();
 ?>
@@ -16,10 +16,12 @@
            <br />
            <label for="pass">Mot de passe </label>
            <input type="password" name="s_pass" id="s_pass" />
+		   <input type="submit" name="Envoyer" value="Connection" />
     </form>
   </div>
 
   <div class = "bloc-inscription">
+	<a href="inscription.php"> Inscription </a>
   </div>
 </div>
 

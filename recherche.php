@@ -2,7 +2,7 @@
 	require_once 'includes/config.php';
 	require_once 'includes/htmlElmt.php';
 
-	displayHead("recherche");
+	displayHead("Recherche");
 	echo '<body>';
 	displayHeader();
 ?>
