@@ -9,6 +9,7 @@ function displayHead($pageName)
 	echo '	<title>'.$pageName.'</title>';
 	echo '	<link rel="stylesheet" href="stylesheets/calendar.css"/>';
 	echo '	<link rel="stylesheet" href="stylesheets/form.css"/>';
+	echo '  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>';
 	echo '</head>';
 }
 
