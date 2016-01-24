@@ -42,8 +42,7 @@ if(ISSET($_POST['Envoyer'])){
 	//On créer les variables
 	$prenom =   $_POST['s_prenom'];
 	$nom = $_POST['s_nom'];
-	$password = $POST['s_pass'];
-	$password = hash("sha256", $password);
+	$password = md5($_POST['s_pass']);
 	$mail = $_POST['s_mail'];
 	$ville = $_POST['s_city'];
 
