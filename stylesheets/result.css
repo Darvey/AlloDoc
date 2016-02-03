@@ -1,0 +1,344 @@
+@font-face {
+	font-family: 'Otama';
+	src: url('../font/Otama.otf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+a
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+body
+{
+  height: 100%;
+}
+
+header
+{
+  z-index: 1;
+  position: fixed;
+  top:0px;
+
+  width: 100%;
+  height: 67px;
+
+  font-weight: lighter;
+  background-color: #FF5544;
+	color: WHITE;
+
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+
+}
+.header-shrink{
+
+	z-index: 4;
+    position:fixed;
+	height: 0px;
+    top:0;
+
+	color: #FF5544;
+}
+
+.title
+{
+  position: absolute;
+  padding: 0.4em;
+  font: 2.2em "Otama";
+
+}
+
+.textInscription
+{
+ 	position: absolute;
+	right: 1%;
+
+  	padding: 1em;
+  	font: 1.2em "Helvetica";
+}
+
+section
+{
+
+  position: fixed;
+  right: 13%;
+
+  width: 26em;
+  height: 100%;
+
+  background-color: #3F3F3F;
+
+}
+.up1
+{
+  z-index: 2;
+  position: fixed;
+  top: 4.2em;
+  width: 100%;
+  height: 4em;
+  background-color: WHITE;
+  border-bottom: 1px solid rgba(63, 63, 63, 1);
+
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.up1-shrink
+{
+	top:0;
+}
+.up2
+{
+  z-index: 3;
+  position: fixed;
+  right: 13%;
+  top: 4.2em;
+  width: 26em;
+  height: 4em;
+  background-color: #3F3F3F;
+  text-align: center;
+
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.up2-shrink
+{
+	top:0;
+}
+
+.monthText
+{
+  position: relative;
+  bottom: 0.6em;
+
+
+  font: 2em "Otama";
+  color: #FF5544;
+}
+.blocMedecin-first
+{
+  position: relative;
+	height: 8em;
+}
+
+.blocMedecin
+{
+  position: relative;
+
+  margin-top: 2em;
+  margin-left: 6em;
+
+  width: 84%;
+  height: 14em;
+
+  background: url("../img/opa.png");
+  background-repeat: repeat-x repeat-y;
+
+  border: 2px solid rgba(215, 215, 215, .3);
+
+}
+.blocMedecin:hover
+{
+  border: 2px solid rgba(255, 85, 68, .5);
+}
+
+.infosMedecin
+{
+	position: relative;
+	padding-left: 10%px;
+	color: #464646;
+	float: left;
+}
+
+
+.nameMedecin
+{
+	font-family:"Otama";
+	font-size: 1.8em;
+	color: rgb(77, 77, 77);
+}
+
+.icnMedecin
+{
+	margin: 38px 20px 20px 20px;
+	float: left;
+}
+
+.nextWeek_btn
+{
+  position: relative;
+  top:41%;
+  right: 0.7em;
+
+  float: right;
+
+  font: 2em 'Helvetica';
+  font-weight: bold;
+  color:#FF5544;
+}
+
+/* ------------------------------------------ CARTE BLOC */
+
+#blocMap
+{
+
+	position: fixed;
+	background-color: #3F3F3F;
+	left: -700px;
+	top: 26%;
+	height: 480px;
+	width: 700px;
+	transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0s;
+}
+#blocMap:hover
+{
+	left: 0px;
+
+}
+#blocMap:hover #iconMap
+{
+	top:26%;
+	left: 700px;
+}
+
+#map
+{
+	position: absolute;
+	margin: 10px;
+	height: 460px;
+	width: 680px;
+}
+#iconMap
+{
+	position: inherit;
+	background-color: inherit;
+	left: -2px;
+	top: 36%;
+	padding:8px;
+	transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0s;
+}
+
+/* ------------------------------------------ SEARCH BLOC */
+
+#blocSearch
+{
+
+	position: fixed;
+	background-color: #3F3F3F;
+	left: -700px;
+	top: 41%;
+	height: 160px;
+	width: 700px;
+	transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0s;
+}
+#blocSearch tr
+{
+	z-index: 1;
+	position: relative;
+	margin-top: 60px;
+	margin-left: -68px;
+
+	border:none;
+	display: inline-block;
+
+	font : 1.6em 'Helvetica';
+	color: #3F3F3F;
+}
+#blocSearch:hover
+{
+	left: 0px;
+}
+#blocSearch:hover #iconSearch
+{
+	left: 620px;
+}
+#iconSearch
+{
+	z-index: 1;
+	position: inherit;
+	background-color: inherit;
+	left: 0px;
+	top: 41%;
+
+	margin-top:52px;
+	padding:8px;
+	transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0s;
+}
+input
+{
+	border: none;
+	opacity: 0.6;
+
+
+	background-color: rgb(120, 120, 120);
+	color:#262626;
+	height: 42px;
+
+	padding-left: 10px;
+	border-bottom: 3px solid #262626;
+
+}
+input:focus,
+input:hover
+{
+	outline: none;
+	border-bottom: 3px solid #FF5544;
+}
+
+/* ------------------------------------------ CALENDAR */
+
+.calendar
+{
+	position: relative;
+  right: 2.9em;
+
+  float:right;
+
+  	margin-top: 0.6em;
+	margin-bottom: 2em;
+	font: 1em "Helvetica", Courier, monospace;
+	padding-left: 1em;
+}
+
+.calendar-head
+{
+	color:#e3e3e3;
+	margin:0;
+	padding: 0;
+}
+.calendar-head th
+{
+	min-width:3.8em;
+	text-align: center;
+	line-height: 1.8em;
+}
+.calendar-head p
+{
+	font: 1.6em "Helvetica";
+	line-height: 0.8em;
+	color: #FF5544;
+	padding: 0;
+	margin:0px 0px 5px 0px;
+}
+
+.calendar-body
+{
+	text-align: center;
+}
+.s-horraire
+{
+	font-weight: lighter;
+	line-height:1.3em;
+	color:#e3e3e3;
+
+	transition: all 0.1s linear 0s;
+}
+.s-horraire:hover
+{
+	color: #FF5544;
+}

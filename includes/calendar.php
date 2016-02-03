@@ -119,15 +119,48 @@ function getMedecin($id){
 	return $result;
 }
 
+
 function displayMedecin()
 {
 	$id = 1;
 	$medecin = getMedecin($id);
 
-	echo '<a href="#"><div class = "vignetteMedecin">';
-	echo '<img src="./img/icnMedecin.svg" class ="icnMedecin">';
-	echo '<p>Dr '.$medecin['m_prenom'].' '.$medecin['m_nom'].'<br>'.$medecin['m_cp'].' '.utf8_encode($medecin['m_ville']).
-		'<br>'.$medecin['m_adresse'].'</p>';
-	echo '</div></a>';
+   echo'<div class="blocMedecin">';
+   echo'<img src="img/128.png" class ="icnMedecin">';
+   echo'<div class="infosMedecin">';
+   echo'<p class = "nameMedecin"> Dr '.$medecin['m_prenom'].' '.$medecin[m_nom].'</p>';
+   echo'<p> Spécialité : généraliste<br>';
+   echo $medecin['m_adresse'].' '.$medecin['m_ville'].'</p>';
+   echo'</div>';
+   echo'<div class = "nextWeek_btn"> <a href="#" > > </a> </div>';
+   echo'<div class="calendar">';
+   echo'  <table>';
+   echo'    <thead class = "calendar-head">';
+   echo'     <tr>';
+   echo'       <th> Lundi <br><p>20</p></th>';
+   echo'       <th> Mardi <br><p>21</p></th>';
+   echo'       <th> Mercredi <br><p>23</p></th>';
+   echo'       <th> Jeudi <br><p>24</p></th>';
+   echo'       <th> Vendredi <br><p>25</p></th>';
+   echo'       <th> Samedi <br><p>26</p></th>';
+   echo'     </tr>';
+   echo'    </thead>';
+   echo'    <tbody class = "calendar-body">';
+   echo'       <tr>';
+   echo'         <td>';
+   echo'           <a class = "s-horraire" href = "#"> 8h00 </a><br>';
+   echo'           <a class = "s-horraire" href = "#"> 9h30 </a><br>';
+   echo'           <a class = "s-horraire" href = "#"> 10h00 </a><br>';
+   echo'           <a class = "s-horraire" href = "#"> 11h30 </a><br>';
+   echo'           <a class = "s-horraire" href = "#"> 14h30 </a><br>';
+   echo'           <a class = "s-horraire" href = "#"> 15h30 </a><br>';
+   echo'           <a class = "s-horraire" href = "#"> 16h30 </a><br>';
+   echo'          </td>';
+   echo'         </tr>';
+   echo'       </tbody>';
+   echo'      </table>';
+   echo'     </div>';
+   echo'    </div>';
 }
+
 ?>

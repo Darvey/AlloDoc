@@ -1,86 +1,78 @@
-<?php
-	require_once 'includes/config.php';
-	require_once 'includes/htmlElmt.php';
+<!DOCTYPE html>
 
-	displayHead("Result");
+<head>
+  <meta charset="utf-8">
+  <title>recherche</title>
+  <link rel="stylesheet" href="stylesheets/result.css"/>
+  <link rel="stylesheet" href="stylesheets/normalize.css"/>
 
-	$month = false;
-	$year = false;
-	$day = null;
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <script type='text/javascript' src="js/scrollHeader.js"></script>
+  <script type='text/javascript' src="js/map.js"></script>
 
-	if ( isset($_GET['m']) )
-	{
-		$month = $_GET['m'];
-	}
+  <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaCslbhbWGYa7iBEuCatwUI9iyRHC1xvc&callback=initMap">
+  </script>
 
-	if ( isset($_GET['y']) )
-	{
-		$year = $_GET['y'];
-	}
-	if ( isset ($_GET['d']) )
-	{
-		$day = $_GET['d'];
-	}
+</head>
 
-	echo '<body onload = "codeAddress()">';
-		displayHeader();
-		echo '<section>';
-			echo '<div id ="blocMedecins">';
-			echo '<p>Selectionnez un MEDECIN dans la liste pour faire apparaitre ses DISPONIBILITES</p>';
-			for($i=0;$i<10;$i++){
-				displayMedecin();
-			}
-			echo '</div>';
-			displayCalendarWeek($day);
-		echo '</section>';
+<body onload = codeAddress()>
 
-?>
+  <header>
+    <div class = "title"> Allodoc. </div>
+    <a class="textInscription" href="connect.php">connexion</a>
+  </header>
+
+  <section>
+  </section>
+
+  <div class="up1">
+  </div>
+
+  <div class="up2">
+    <p class = "monthText"> Janvier </p>
+  </div>
+
+  <div class="blocMedecin-first"></div>
+
+  <?php
+     require_once 'includes/config.php';
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+     displayMedecin();
+  ?>
+
+  <div id="blocMap">
+    <img src="img/mapIcon.png" id ="iconMap" width="50px">
+    <div id="map"></div>
+  </div>
+
+  <div id="blocSearch">
+    <img src="img/searchIcon.png" id ="iconSearch" width="46px">
+  		<form action="index.php" method="post" >
+  		<table align="center" border="0" cellspacing="0"  cellpadding="0">
+        <td><input classe = "searchSpeciality" type="text" name="adresse" placeholder="Spécialité"></td>
+  			<td><input classe = "searchAdresse" type="text" name="adresse" placeholder="Adresse"></td>
+  		</table>
+  </div>
 
 
-<div id = "blocMap">
-	<img src="./img/mapIcon.png" id ="btnMap" onclick="move()">
-	<div id="map"></div>
-</div>
-
-
-<script type="text/javascript">
-
-	var map;
-	var geocoder;
-
-	function initMap()
-	{
-	 geocoder = new google.maps.Geocoder();
-
-	  map = new google.maps.Map(document.getElementById('map'), {
-	    center: {lat: -34.397, lng: 150.644},
-	    zoom: 14
-	  });
-	}
-
-	 function codeAddress() {
-	    var address = "Besançon rue des granges";
-	    geocoder.geocode( { 'address': address}, function(results, status) {
-	      if (status == google.maps.GeocoderStatus.OK) {
-	        map.setCenter(results[0].geometry.location);
-	        var marker = new google.maps.Marker({
-	            map: map,
-	            position: results[0].geometry.location
-	        });
-	      } else {
-	        alert("Geocode was not successful for the following reason: " + status);
-	      }
-	    });
-	  }
-</script>
-
-<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaCslbhbWGYa7iBEuCatwUI9iyRHC1xvc&callback=initMap">
-</script>
-
-<?php
-	displayFooter();
-?>
 
 </body>
 </html>
