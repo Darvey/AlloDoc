@@ -1,3 +1,7 @@
+/* #FF5544 = red */
+/* #3F3F3F = gray */
+
+
 @font-face {
 	font-family: 'Otama';
 	src: url('../font/Otama.otf') format('truetype');
@@ -264,7 +268,6 @@ section
 	background-color: inherit;
 	left: 0px;
 	top: 41%;
-
 	margin-top:52px;
 	padding:8px;
 	transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0s;
@@ -273,7 +276,6 @@ input
 {
 	border: none;
 	opacity: 0.6;
-
 
 	background-color: rgb(120, 120, 120);
 	color:#262626;

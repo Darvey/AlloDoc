@@ -19,7 +19,7 @@
 <body onload = codeAddress()>
 
   <header>
-    <div class = "title"> Allodoc. </div>
+    <a class="title" href="index.php"> Allodoc. </a>
     <a class="textInscription" href="connect.php">connexion</a>
   </header>
 
@@ -47,15 +47,6 @@
      displayMedecin();
      displayMedecin();
      displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
   ?>
 
   <div id="blocMap">
@@ -64,7 +55,7 @@
   </div>
 
   <div id="blocSearch">
-    <img src="img/searchIcon.png" id ="iconSearch" width="46px">
+    <a href='#' id="iconSearch"><img src="img/searchIcon.png" width="46px"></a>
   		<form action="index.php" method="post" >
   		<table align="center" border="0" cellspacing="0"  cellpadding="0">
         <td><input classe = "searchSpeciality" type="text" name="adresse" placeholder="Spécialité"></td>

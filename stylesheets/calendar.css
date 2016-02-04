@@ -9,7 +9,7 @@
 
 body
 {
-	background-color: #e3e3e3;
+	background-color: WHITE;
 	margin:0;
 	padding:0;
 	width: 100%;
@@ -21,7 +21,7 @@ header
 	font-weight: lighter;
 	height: 4em;
 	width: 100%;
-	background-color: #CC412B;
+	background-color: #FF5544;
 	margin:0;
 	padding:0;
 }
@@ -109,14 +109,14 @@ section
 .btnConnexion:hover
 {
 	transition: all 0.2s linear 0s;
-	color: #CC412B;
+	color: #FF5544;
 	background-color: #e3e3e3;
 }
 .nextWeek
 {
 	text-decoration:none;
 	font: 2em "Helvetica";
-	color:#CC412B;
+	color:#FF5544;
 }
 .nextWeek:hover
 {
@@ -128,7 +128,7 @@ section
 {
 	text-decoration:none;
 	font: 2em "Helvetica";
-	color:#CC412B;
+	color:#FF5544;
 }
 .pastWeek:hover
 {
@@ -172,7 +172,7 @@ caption
 {
 	font: 1.8em "Helvetica";
 	line-height: 1.2em;
-	color: #CC412B;
+	color: #FF5544;
 	padding: 0;
 	margin:0;
 }
@@ -241,92 +241,7 @@ caption
 {
 	transition: all 0.4s ease 0s;
 	color: #e3e3e3;
-	background-color:#CC412B;
+	background-color:#FF5544;
 	padding-left:10px;
 	padding-right: 10px;
-}
-
-
-/*
- COULEURS
- #e3e3e3 CREME
- #5183AD BLEU
- #626F89 BLEU GRIS
- #CC412B ROUGE
- #B27B72 ROUGE PALE
-
-*/
-
-
-/*.calendar-line-head td
-{
-	margin: 0;
-	padding: 4px 0px 0px 0px;
-	list-style-type: none;
-	width: 70px;
-	height:40px;
-	float: left;
-	text-align: center;
-	color : #3F364C;
-	line-height: 0.8em;
-}
-.calendar-line-head p
-{
-	color :#FF7F66;
-	font:1.4em "Helvetica";
-}
-
-
-.calendar-line-event td
-{
-	list-style-type: none;
-	margin: none;
-	width: 70px;
-	color : #3F364C;
-	float: left;
-	text-align: center;
-}
-
-
-/*
-.calendar-head
-{
-	background-color: #FF9900;
-	text-align: right;
-	color: #FFF;
-}
-
-.calendar-week li
-{
-	background-color: #60B0D7;
-	color: #FFF;
-}
-
-
-.calendar-ext-day
-{
-	color: #CCC;
-}
-
-.calendar-current-day
-{
-	font-style: italic;
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-.calendar-event
-{
-	color: #3399CC;
-}
-
-.calendar_infobulle div
-{
-	display: none;
-}
-
-.calendar_infobulle:hover div
-{
-	position: absolute;
-	display: block;
 }
