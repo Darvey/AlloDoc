@@ -19,6 +19,7 @@ body{
    position: absolute;
    background-image: url("../img/connect_background.jpg");
    background-position: top right;
+
 }
 
 /* ------- HEADER ------ */
@@ -46,36 +47,34 @@ header{
 
 }
 
-.textInscription{
- 	position: absolute;
-	right: 1%;
-
-  	padding: 1em;
-  	font: 1.2em "Helvetica";
-}
-
-
 /* ------- SWITCHER ------ */
 
-#switcher{
+.switcher{
+	z-index:2;
+	position: relative;
    margin-top: 140px;
-   margin-left: 60%;
+   margin-left: 10%;
    width: 280px;
+
+	transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0.5s;
 }
 
-img{
-   position: absolute;
-   margin-top: 300px;
-   margin-left: 50%;
+.switcher-rotate{
+
+
+	transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0.5s;
 }
+
 
 /* ------- FORMULAIRE INSCRIPTION------ */
 
 .inscription-form{
 
+
+
    position: inherit;
 
-   background-color: #3F3F3F;
+   background-color: rgb(242,242,242) ;
 
    -moz-box-shadow: 0px 0px 10px 0px #343434;
    -webkit-box-shadow: 0px 0px 10px 0px #343434;
@@ -104,10 +103,11 @@ img{
 .inscription-form input{
    width: 230px;
    margin: 5px 20px;
-   padding: 5px 8px;
-   background-color: rgb(242,242,242);
+   padding: 8px 8px;
+   background-color: rgb(236,236,236);
    color:#262626;
-   border:none;
+	border: none;
+
 }
 
 .inscription-form input[type='submit']{
@@ -118,6 +118,7 @@ img{
    color:WHITE;
    margin:20px 0 0 0;
    background-color: rgb(77,192,253);
+	border:none;
 }
 
 .inscription-form input:hover[type='submit']{
@@ -125,25 +126,27 @@ img{
 }
 .inscription-form label{
    display:block;
-   font-family:'Otama';
-   font-weight: bold;
+   font-family: 'avenir next';
+   font-weight:normal;
    margin: 0 0 0 20px;
    line-height: 1.4;
-   color : #FF5544;
+   color : #262626;
 }
 
 /* ------- FORMULAIRE CONNEXION------ */
 
 .connect-form{
-   background-color: #3F3F3F;
+
+	background-color: rgb(242,242,242) ;
 
    -moz-box-shadow: 0px 0px 10px 0px #343434;
    -webkit-box-shadow: 0px 0px 10px 0px #343434;
    -o-box-shadow: 0px 0px 10px 0px #343434;
    box-shadow: 0px 0px 10px 0px #343434;
+
    transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0s;
    transform: perspective( 600px ) rotateX( -90deg );
-   margin-top: -380px;
+   margin-top: -410px;
 }
 .connect-form-rotate{
    transition:all 0.6s cubic-bezier(.62,.06,.49,.96) 0.5s;
@@ -164,9 +167,10 @@ img{
    width: 230px;
    margin: 5px 20px;
    padding: 5px 8px;
-   background-color: rgb(242,242,242);
+	background-color: rgb(236,236,236);
    color:#262626;
-   border:none;
+	border: none;
+
 }
 
 .connect-form input[type='submit']{
@@ -177,16 +181,72 @@ img{
    color:WHITE;
    margin:20px 0 0 0;
    background-color: rgb(77,192,253);
+	border:none;
 }
 
 .connect-form input:hover[type='submit']{
    background-color: rgb(77,180,253);
 }
 .connect-form label{
-   display:block;
-   font-family:'Otama';
-   font-weight: bold;
+	display:block;
+   font-family: 'avenir next';
+   font-weight:normal;
    margin: 0 0 0 20px;
    line-height: 1.4;
-   color : #FF5544;
+   color : #262626;
+}
+
+/* ------- INFORMATIONS------ */
+
+.infosInscription{
+
+	position: absolute;
+	z-index:1;
+
+	bottom:0px;
+	top:400px;
+	right:0px;
+	left:0;
+
+
+	padding-left: 45%;
+	padding-top: 20px;
+	padding-bottom:40px;
+	padding-right:40px;
+
+	font-family: 'avenir next';
+	color: #3F3F3F;
+	background-color: rgba(240, 240, 240, 0.9);
+
+}
+
+.infosInscription a{
+	z-index: 2;
+	color: #FF5544;
+}
+
+.infosInscription-rotate h1,
+.infosInscription-rotate p,
+.infosInscription-rotate a{
+	visibility: hidden;
+}
+
+.infosConnexion{
+	z-index: 2;
+	font-family: 'avenir next';
+	color: #3F3F3F;
+	position: absolute;
+	left: 45%;
+	top: 420px;
+
+	opacity: 0;
+
+}
+.infosConnexion a{
+	padding-left: 20px;
+	color: #FF5544;
+}
+
+.infosConnexion-rotate{
+	opacity: 1;
 }

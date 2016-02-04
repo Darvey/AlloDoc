@@ -10,28 +10,45 @@
 
 <body>
 
-<header>
+<header  onclick = "rotate180()">
    <a class="title" href="index.php"> Allodoc. </a>
 </header>
 
-<img src="img/circle100.png" onclick = "rotate180()" >
+<div class='infosInscription'>
+   <h1> Inscription </h1>
+   <p>L’inscritption ne prend qu’une minute ! pour cela, rien de plus simple,<br/>
+   il vous suffit de remplir ce formulaire.</p>
+   <p>  *L’adresse mail nous sert à vous communiquer des informations<br/>
+      importantes sur vos rendez-vous. Nous ne la communiquerons à aucun tiers.</p></br>
+   <a href="#" class="link-connect" onclick="rotate180()"> Déjà inscrit ? </a>
+</div>
 
-<div id="switcher" >
+<div class='infosConnexion'>
+   <h1>Mon compte</h1>
+   <a href="#" class="link-inscription" onclick="rotate180()"> Pas encore inscrit ? </a>
+</div>
+
+<div class="switcher" >
 
    <form action="traitement.php" method="post" class="inscription-form">
       <fieldset>
-         <label for="prenom">Prenom </label>
-         <input type="text" name="s_prenom">
-      </fieldset>
-
-      <fieldset>
-         <label for="nom">Nom </label>
+         <label for="prenom">Nom </label>
          <input type="text" name="s_nom">
       </fieldset>
 
       <fieldset>
-         <label for="pass">Mot de passe </label>
-         <input type="password" name="s_pass"/>
+         <label for="prenom">prenom </label>
+         <input type="text" name="s_prenom">
+      </fieldset>
+
+      <fieldset>
+         <label for="ville">Ville </label>
+         <input type="text" name="s_city"/>
+      </fieldset>
+
+      <fieldset>
+         <label for="ville">Adresse </label>
+         <input type="text" name="s_adress"/>
       </fieldset>
 
       <fieldset>
@@ -40,8 +57,8 @@
       </fieldset>
 
       <fieldset>
-         <label for="ville">Ville </label>
-         <input type="text" name="s_city"/>
+         <label for="pass">Mot de passe </label>
+         <input type="password" name="s_pass"/>
       </fieldset>
 
       <fieldset>
@@ -64,7 +81,10 @@
          <input class = "button-connect" type="submit" name="Connexion" value="Connexion"/>
       </fieldset>
    </form>
+
 </div>
+
+
 
 </body>
 
