@@ -1,40 +1,44 @@
-<?php if(!empty($_POST['Envoyer'])){ // Si le formulaire est envoyé.
+<?php 
+try{
+	$bdd = new PDO ('mysql:host=localhost;dbname=docapp', 'root', 'root');
+}
+catch(Exception $e){
+  die('Erreur :'.$e->getMessage());
+}
 
-	// on se connecte à MySQL 	
-	$mysqli = new mysqli("localhost", "root", "root", "docapp");
-	
-	if ($mysqli->connect_errno) {
-		echo "Echec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	}
-
+if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 		
 	if(!empty($_POST['s_mail']) && !empty($_POST['s_pass'])) {
 	
 		$password = md5($_POST['s_pass']);
 		$mail = $_POST['s_mail'];
 
-		if (!($data = $mysqli->prepare( "SELECT p_mdp FROM patient WHERE p_mail = (?) LIMIT 1;"))) {
-			echo "Echec de la préparation : (" . $mysqli->errno . ") " . $mysqli->error;
-		};
-        if (!($data->bind_param("i", $mail))){
-			echo "Echec lors du liage des paramètres : (" . $data->errno . ") " . $data->error;
-		};
-        if(!($data->execute())){
-			echo "Echec lors de l'exécution : (" . $data->errno . ") " . $data->error;
-		};
-		
-		$data->bind_result($name);
-		
-		// Lecture des valeurs 
-		while ($data->fetch()) {
-			$mdp =  $name;
-		}
+		$req = $bdd->prepare('SELECT p_mdp FROM patient WHERE p_mail = (:mail) LIMIT 1;');
 
-		if($mdp != $password) {
+		$req->execute(array("mail" => $mail));
+		
+		$res = $req->fetch();
+
+		if($res['p_mdp'] != $password) {
 			echo 'Probleme Mail/Mot de passe';
 		} else{
 			echo "Vous etes connecté";
 		}
 	}
+}
+
+if(ISSET($_POST['Inscription'])){
+	//On creer les variables
+	$prenom =   $_POST['s_prenom'];
+	$nom = $_POST['s_nom'];
+	$password = md5($_POST['s_pass']);
+	$mail = $_POST['s_mail'];
+	$ville = $_POST['s_city'];
+
+	$req = $bdd->prepare('INSERT INTO `patient`(`p_nom`, `p_prenom`, `p_ville`, `p_mail`, `p_mdp`) VALUES (:nom, :prenom, :ville, :mail, :password)');
+
+	$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville));
+
+	echo "Inscription effectué !";
 }
 ?>

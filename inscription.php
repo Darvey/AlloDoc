@@ -45,7 +45,7 @@
       </fieldset>
 
       <fieldset>
-         <input class = "button-connect" type="submit" name="Envoyer" value="Inscription"/>
+         <input class = "button-connect" type="submit" name="Inscription" value="Inscription"/>
       </fieldset>
    </form>
 
@@ -61,37 +61,12 @@
       </fieldset>
 
       <fieldset>
-         <input class = "button-connect" type="submit" name="Envoyer" value="Connexion"/>
+         <input class = "button-connect" type="submit" name="Connexion" value="Connexion"/>
       </fieldset>
    </form>
 </div>
 
 </body>
-
-<!-- METTRE LE PHP DANS UN FONCTION !-->
-
-<?php
-try{
-	$bdd = new PDO ('mysql:host=localhost;dbname=docapp', 'root', 'root');
-}
-catch(Exception $e){
-  die('Erreur :'.$e->getMessage());
-}
-
-if(ISSET($_POST['Envoyer'])){
-	//On creer les variables
-	$prenom =   $_POST['s_prenom'];
-	$nom = $_POST['s_nom'];
-	$password = md5($_POST['s_pass']);
-	$mail = $_POST['s_mail'];
-	$ville = $_POST['s_city'];
-
-	$req = $bdd->prepare('INSERT INTO `patient`(`p_nom`, `p_prenom`, `p_ville`, `p_mail`, `p_mdp`) VALUES (:nom, :prenom, :ville, :mail, :password)');
-
-	$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville));
-
-}
-?>
 
 <!--
 <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>

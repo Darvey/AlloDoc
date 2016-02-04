@@ -15,7 +15,7 @@
            <br />
            <label for="pass">Mot de passe </label>
            <input type="password" name="s_pass" id="s_pass" />
-		   <input type="submit" name="Envoyer" value="Connection" />
+		   <input type="submit" name="Connexion" value="Connexion" />
     </form>
   </div>
 
