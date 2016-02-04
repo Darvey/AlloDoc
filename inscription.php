@@ -49,7 +49,7 @@
       </fieldset>
    </form>
 
-   <form action="traitement.php" action="post" class="connect-form">
+   <form action="traitement.php" method="post" class="connect-form">
       <fieldset>
          <label for="prenom"> Mail </label>
          <input type="text" name="s_mail">
