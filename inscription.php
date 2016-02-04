@@ -18,7 +18,7 @@
 
 <div id="switcher" >
 
-   <form action="traitement.php" action="post" class="inscription-form">
+   <form action="traitement.php" method="post" class="inscription-form">
       <fieldset>
          <label for="prenom">Prenom </label>
          <input type="text" name="s_prenom">
