@@ -1,32 +1,31 @@
-<?php
-	require_once 'includes/config.php';
-	require_once 'includes/htmlElmt.php';
+<!DOCTYPE html>
 
-	displayHead("Recherche");
-	echo '<body>';
-	displayHeader();
-?>
+<head>
+	<meta charset="utf-8">
+	<title>Allodoc</title>
+	<link rel="stylesheet" href="stylesheets/recherche.css"/>
+	<link rel="stylesheet" href="stylesheets/normalize.css"/>
 
-	<div class = "blocRecherche">
-		<form action="index.php" method="post" >
-		<table align="center" border="0" cellspacing="0"  cellpadding="0">
-			<td class="warper">
-				<select name="spec" id="specialite">
-				<option value="generaliste"> generaliste </option>
-				<option value="chirurgien"> chirurgien </option>
-				<option value="dentiste"> dentiste </option>
-				<option value="ophtalmologue"> ophtalmologue </option>
-				</select>
-			</td>
-			<td><label><input type="text" name="adresse"></label></td>
-			<td><img src="img/icnSearch.svg" class ="icnRecherche"></td>
-		</table>
-	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
 
-<?php
-	displayFooter();
-?>
+</head>
+
+<body>
+	<header>
+		<a class="title" href="index.php"> Allodoc. </a>
+		<a class="textInscription" href="inscription.php" >Mon compte</a>
+	</header>
+
+	<form action="index.php" method="post" >
+		<input type="text" id="pac-input" onFocus="geolocate()">
+	</form>
+
+	<script type='text/javascript' src="js/map.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaCslbhbWGYa7iBEuCatwUI9iyRHC1xvc&signed_in=true&libraries=places&callback=initAutocomplete"
+		async defer>
+	</script>
 
 </body>
+
 </html>

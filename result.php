@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>recherche</title>
+  <title>Allodoc</title>
   <link rel="stylesheet" href="stylesheets/result.css"/>
   <link rel="stylesheet" href="stylesheets/normalize.css"/>
 
@@ -20,7 +20,7 @@
 
   <header>
     <a class="title" href="index.php"> Allodoc. </a>
-    <a class="textInscription" href="connect.php">connexion</a>
+    <a class="textInscription" href="connect.php">Mon compte</a>
   </header>
 
   <section>
