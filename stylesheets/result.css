@@ -27,7 +27,7 @@ header{
   height: 67px;
 
   font-weight: lighter;
-  background-color: #FF5544;
+  background-color: #ff5858;
 	color: WHITE;
 
 	-webkit-transition: all 0.5s;
@@ -57,7 +57,7 @@ header{
 	right: 1%;
 
   	padding: 1em;
-  	font: 1.2em "Helvetica";
+  	font: 1.2em "avenir next";
 }
 
 section{
@@ -126,6 +126,7 @@ section{
 .blocMedecin
 {
   position: relative;
+  font-family: 'avenir next';
 
   margin-top: 2em;
   margin-left: 6em;
@@ -174,7 +175,7 @@ section{
 
   float: right;
 
-  font: 2em 'Helvetica';
+  font: 2em 'avenir next';
   font-weight: bold;
   color:#FF5544;
 }
@@ -243,7 +244,7 @@ section{
 	border:none;
 	display: inline-block;
 
-	font : 1.6em 'Helvetica';
+	font : 1.6em 'avenir next';
 	color: #3F3F3F;
 }
 #blocSearch:hover
