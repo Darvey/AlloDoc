@@ -12,7 +12,7 @@ a{
 
 body{
   height: 100%;
-  background-color: rgb(242,242,242);
+  background-color: rgb(242,242,240);
 }
 
 header{
@@ -64,7 +64,8 @@ section{
   width: 26em;
   height: 100%;
 
-  background-color: #3F3F3F;
+  background-image: url("../img/section-result.png");
+  background-repeat: repeat-y;
 
 }
 .up1{
@@ -133,7 +134,8 @@ section{
   background: url("../img/opa2.png");
   background-repeat: repeat-x repeat-y;
 
-  border: 2px solid rgba(215, 215, 215, .3);
+  border: 3px solid rgba(215, 215, 215, .3);
+  border-radius: 6px;
 
 }
 .blocMedecin:hover
@@ -287,13 +289,12 @@ input:hover
 .calendar
 {
 	position: relative;
-	right: 3.5em;
+	right: 3.2em;
 
 	float:right;
 
 	margin-top: 0.6em;
 	margin-bottom: 2em;
-	font: 1em "Helvetica", Courier, monospace;
 }
 
 .calendar-head
@@ -304,13 +305,14 @@ input:hover
 }
 .calendar-head th
 {
-	min-width:3.8em;
-	text-align: center;
+	font: 1em 'Otama';
+	min-width:4em;
 	line-height: 1.8em;
+	text-align: center;
 }
 .calendar-head p
 {
-	font: 1.6em "Helvetica";
+	font: 1.2em "avenir";
 	line-height: 0.8em;
 	color:  #ff5858;
 	padding: 0;

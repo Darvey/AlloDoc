@@ -17,21 +17,20 @@
 </head>
 
 <?php
-    require_once 'includes/config.php';
-    $month = false;
-    $year = false;
-    $day = null;
+  require_once 'includes/config.php';
+  $month = false;
+  $year = false;
+  $day = null;
 
-    if ( isset($_GET['m']) ){
-      $month = $_GET['m'];
-    }
-    if ( isset($_GET['y']) )  {
-      $year = $_GET['y'];
-    }
-    if ( isset ($_GET['d']) ){
-      $day = $_GET['d'];
-      echo 'ok';
-    }
+  if ( isset($_GET['m']) ){
+    $month = $_GET['m'];
+  }
+  if ( isset($_GET['y']) )  {
+    $year = $_GET['y'];
+  }
+  if ( isset ($_GET['d']) ){
+    $day = $_GET['d'];
+  }
 ?>
 
 <body onload = codeAddress()>
@@ -48,22 +47,22 @@
   </div>
 
   <div class="up2">
-    <p class = "monthText"> <?php echo date("F");?> </p>
+    <p class = "monthText"> <?php echo date("F",$day);?> </p>
   </div>
 
   <div class="blocMedecin-first"></div>
 
 <?php
-       displayMedecin($day);
-       displayMedecin($day);
-       displayMedecin($day);
-       displayMedecin($day);
-       displayMedecin($day);
-       displayMedecin($day);
-       displayMedecin($day);
-       displayMedecin($day);
-       displayMedecin($day);
-       displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
+    displayMedecin($day);
   ?>
 
   <div id="blocMap">

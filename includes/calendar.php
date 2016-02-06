@@ -112,19 +112,18 @@ function getMedecin($id){
 }
 
 
-function displayMedecin($_fday = null)
+function displayMedecin($day)
 {
 	$id = 2;
 	$medecin = getMedecin($id);
 
-	if(null == $_fDay){
-		$_fDay = strtotime("last Monday");
+	if(null == $day){
+		$day = strtotime("last Monday");
 	}
+	
 	$dates = array();
-	$events = array();
-
 	for($i=0; $i<7; $i++){
-		$dates[$i] = $_fDay + ($i*3600*24);
+		$dates[$i] = $day + ($i*3600*24);
 	}
 
    echo'<div class="blocMedecin">';
@@ -133,6 +132,7 @@ function displayMedecin($_fday = null)
    echo'<p class = "nameMedecin"> Dr '.$medecin[m_prenom].' '.$medecin[m_nom].'</p>';
    echo'<p> Spécialité : généraliste<br>';
    echo $medecin[m_adresse].' '.$medecin[m_ville].'</p>';
+
    echo'</div>';
    calendarHead($dates);
    echo'    <tbody class = "calendar-body">';
