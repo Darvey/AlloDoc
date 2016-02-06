@@ -38,31 +38,23 @@ function getHorairesDispo($day, $month, $year)
 function calendarHead($dates){
 
 	$strDays = array();
-	$strDays = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'];
+	$strDays = ['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
 	$strMonth = ' '.date('F',$dates[0]);
-
-	echo '<div id="calendar">';
-	echo '<table>';
-	echo 	'<caption>'.strtoupper($strMonth).'</caption>';
-	echo 		'<thead class = "calendar-head">';
-	echo 			'<tr>';
 
 	$lastWeek = $dates[0] - (7*3600*24);
 	$nextWeek = $dates[0] + (7*3600*24);
 
-	echo '<th>';
-		echo '<a class ="pastWeek" href="'.$_SERVER['PHP_SELF'].'?d='.$lastWeek.'&amp"><</a>';
-	echo '</th>';
+	echo'<div class = "nextWeek_btn"> <a href="'.$_SERVER['PHP_SELF'].'?d='.$nextWeek.'&amp">></a> </div>';
+   	echo'<div class="calendar">';
+   	echo'  <table>';
 
-	for($i=0;$i<7;$i++){
+   	echo'    <thead class = "calendar-head">';
+   	echo'     <tr>';
+	for($i=0;$i<6;$i++){
 		echo '<th>'.$strDays[$i].'<br><p>'.date('d',$dates[$i]).'</p></th>';
 	}
-		echo '<th>';
-			echo '<a class ="nextWeek" href="'.$_SERVER['PHP_SELF'].'?d='.$nextWeek.'&amp">></a>';
-		echo '</th>';
-
-	echo 			'</tr>';
-	echo 		'</thead>';
+   	echo'     </tr>';
+   	echo'    </thead>';
 }
 
 /// Affiche les disponibilitées d'un medecin sur une semaine
@@ -120,31 +112,29 @@ function getMedecin($id){
 }
 
 
-function displayMedecin()
+function displayMedecin($_fday = null)
 {
-	$id = 1;
+	$id = 2;
 	$medecin = getMedecin($id);
+
+	if(null == $_fDay){
+		$_fDay = strtotime("last Monday");
+	}
+	$dates = array();
+	$events = array();
+
+	for($i=0; $i<7; $i++){
+		$dates[$i] = $_fDay + ($i*3600*24);
+	}
 
    echo'<div class="blocMedecin">';
    echo'<img src="img/128.png" class ="icnMedecin">';
    echo'<div class="infosMedecin">';
-   echo'<p class = "nameMedecin"> Dr '.$medecin['m_prenom'].' '.$medecin[m_nom].'</p>';
+   echo'<p class = "nameMedecin"> Dr '.$medecin[m_prenom].' '.$medecin[m_nom].'</p>';
    echo'<p> Spécialité : généraliste<br>';
-   echo $medecin['m_adresse'].' '.$medecin['m_ville'].'</p>';
+   echo $medecin[m_adresse].' '.$medecin[m_ville].'</p>';
    echo'</div>';
-   echo'<div class = "nextWeek_btn"> <a href="#" > > </a> </div>';
-   echo'<div class="calendar">';
-   echo'  <table>';
-   echo'    <thead class = "calendar-head">';
-   echo'     <tr>';
-   echo'       <th> Lundi <br><p>20</p></th>';
-   echo'       <th> Mardi <br><p>21</p></th>';
-   echo'       <th> Mercredi <br><p>23</p></th>';
-   echo'       <th> Jeudi <br><p>24</p></th>';
-   echo'       <th> Vendredi <br><p>25</p></th>';
-   echo'       <th> Samedi <br><p>26</p></th>';
-   echo'     </tr>';
-   echo'    </thead>';
+   calendarHead($dates);
    echo'    <tbody class = "calendar-body">';
    echo'       <tr>';
    echo'         <td>';

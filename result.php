@@ -16,11 +16,29 @@
 
 </head>
 
+<?php
+    require_once 'includes/config.php';
+    $month = false;
+    $year = false;
+    $day = null;
+
+    if ( isset($_GET['m']) ){
+      $month = $_GET['m'];
+    }
+    if ( isset($_GET['y']) )  {
+      $year = $_GET['y'];
+    }
+    if ( isset ($_GET['d']) ){
+      $day = $_GET['d'];
+      echo 'ok';
+    }
+?>
+
 <body onload = codeAddress()>
 
   <header>
     <a class="title" href="index.php"> Allodoc. </a>
-    <a class="textInscription" href="connect.php">Mon compte</a>
+    <a class="textInscription" href="inscription.php">Mon compte</a>
   </header>
 
   <section>
@@ -30,23 +48,22 @@
   </div>
 
   <div class="up2">
-    <p class = "monthText"> Janvier </p>
+    <p class = "monthText"> <?php echo date("F");?> </p>
   </div>
 
   <div class="blocMedecin-first"></div>
 
-  <?php
-     require_once 'includes/config.php';
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
-     displayMedecin();
+<?php
+       displayMedecin($day);
+       displayMedecin($day);
+       displayMedecin($day);
+       displayMedecin($day);
+       displayMedecin($day);
+       displayMedecin($day);
+       displayMedecin($day);
+       displayMedecin($day);
+       displayMedecin($day);
+       displayMedecin($day);
   ?>
 
   <div id="blocMap">

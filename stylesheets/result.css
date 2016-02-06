@@ -1,7 +1,3 @@
-/* #FF5544 = red */
-/* #3F3F3F = gray */
-
-
 @font-face {
 	font-family: 'Otama';
 	src: url('../font/Otama.otf') format('truetype');
@@ -16,18 +12,19 @@ a{
 
 body{
   height: 100%;
+  background-color: rgb(242,242,242);
 }
 
 header{
-  z-index: 1;
-  position: fixed;
-  top:0px;
+	z-index: 1;
+	position: fixed;
+	top:0px;
 
-  width: 100%;
-  height: 67px;
+	width: 100%;
+	height: 67px;
 
-  font-weight: lighter;
-  background-color: #ff5858;
+	font-weight: lighter;
+	background-color: #ff5858;
 	color: WHITE;
 
 	-webkit-transition: all 0.5s;
@@ -40,8 +37,7 @@ header{
     position:fixed;
 	height: 0px;
     top:0;
-
-	color: #FF5544;
+	color: #ff5858;
 }
 
 .title
@@ -115,7 +111,7 @@ section{
 
 
   font: 2em "Otama";
-  color: #FF5544;
+  color: #ff5858	;
 }
 .blocMedecin-first
 {
@@ -134,7 +130,7 @@ section{
   width: 84%;
   height: 14em;
 
-  background: url("../img/opa.png");
+  background: url("../img/opa2.png");
   background-repeat: repeat-x repeat-y;
 
   border: 2px solid rgba(215, 215, 215, .3);
@@ -157,13 +153,13 @@ section{
 .nameMedecin
 {
 	font-family:"Otama";
-	font-size: 1.8em;
+	font-size: 1.6em;
 	color: rgb(77, 77, 77);
 }
 
 .icnMedecin
 {
-	margin: 38px 20px 20px 20px;
+	margin: 20px 20px 20px 20px;
 	float: left;
 }
 
@@ -175,7 +171,7 @@ section{
 
   float: right;
 
-  font: 2em 'avenir next';
+  font: 2em 'Otama';
   font-weight: bold;
   color:#FF5544;
 }
@@ -291,14 +287,13 @@ input:hover
 .calendar
 {
 	position: relative;
-  right: 2.9em;
+	right: 3.5em;
 
-  float:right;
+	float:right;
 
-  	margin-top: 0.6em;
+	margin-top: 0.6em;
 	margin-bottom: 2em;
 	font: 1em "Helvetica", Courier, monospace;
-	padding-left: 1em;
 }
 
 .calendar-head
@@ -317,7 +312,7 @@ input:hover
 {
 	font: 1.6em "Helvetica";
 	line-height: 0.8em;
-	color: #FF5544;
+	color:  #ff5858;
 	padding: 0;
 	margin:0px 0px 5px 0px;
 }

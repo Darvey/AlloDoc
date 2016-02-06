@@ -12,14 +12,9 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaCslbhbWGYa7iBEuCatwUI9iyRHC1xvc&signed_in=true&libraries=places&callback=initAutocomplete"
 		async defer>
 	</script>
-
-
 </head>
 
 <body>
-
-
-
 	<header>
 		<a class="title" href="index.php"> Allodoc. </a>
 		<a class="textInscription" href="inscription.php" >Mon compte</a>
@@ -36,9 +31,6 @@
 			</form>
 		</div>
 	</div>
-
-
-
 
 </body>
 
