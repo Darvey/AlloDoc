@@ -28,6 +28,11 @@ header{
    -moz-transition: all 0.5s;
    transition: all 0.5s;
 }
+body{
+	width: 100%;
+	background-image: url("../img/recherche-background.jpg");
+	background-repeat: none;
+}
 
 .title{
   position: absolute;
@@ -41,7 +46,7 @@ header{
 	right: 1%;
 
   	padding: 1em;
-  	font: 1.2em "Helvetica";
+  	font: 1.2em "avenir next";
 }
 
 /* ------- FORMULAIRE RECHERCHE------ */
@@ -54,7 +59,7 @@ header{
    color: #5F5F5F ;
 }
 .text-recherche h1{
-
+	color: #4F4F4F ;
 }
 
 /* ------- FORMULAIRE RECHERCHE------ */
@@ -66,7 +71,7 @@ header{
    margin-top: 5%;
 
    padding:12px;
-   background-color: rgb(234,234,234) ;
+   background-color: rgba(234,234,234,0.5) ;
 
    display: inline-block;
    text-align: center;
