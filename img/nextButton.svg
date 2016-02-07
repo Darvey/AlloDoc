@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="100px" viewBox="0 0 50 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 1 + &lt; Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-1343.000000, -389.000000)">
+            <g id="Oval-1-+-&lt;-+-Oval-1-+-&lt;-Copy-+-Rectangle-3-+-Rectangle-4-+-Rectangle-7" sketch:type="MSLayerGroup" transform="translate(48.000000, 289.000000)">
+                <g id="Oval-1-+-&lt;-+-Oval-1-+-&lt;-Copy-+-Rectangle-3-+-Rectangle-4">
+                    <g id="Oval-1-+-&lt;-Copy" transform="translate(1320.000000, 150.000000) scale(-1, 1) translate(-1320.000000, -150.000000) translate(1295.000000, 100.000000)">
+                        <path d="M50,0 C22.3857625,0 0,22.3857625 0,50 C0,77.6142375 22.3857625,100 50,100 L50,-1.77635684e-15 Z" id="Oval-1" fill="#7EBAFF" sketch:type="MSShapeGroup"></path>
+                        <text id="&lt;" sketch:type="MSTextLayer" font-family="Avenir Next" font-size="36" font-weight="normal" fill="#FFFFFF">
+                            <tspan x="17" y="61">&lt;</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
