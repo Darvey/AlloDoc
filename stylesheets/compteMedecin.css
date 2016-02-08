@@ -43,15 +43,15 @@ header{
 .header-menu{
   position: absolute;
   background: WHITE;
-  font-family: 'avenir next';
+  font-family: 'avenir';
   color: #3F3F3F;
   font-size: 1.1em;
   width: 100%;
   display: inline-table;
   text-align: center;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
 }
 
 .header-menu-shrink{
@@ -77,7 +77,7 @@ header{
 .menu-select2{
   position: absolute;
   right:0%;
-  top:140%;
+  top:134%;
   width: 80px;
   visibility: visible;
 }
@@ -92,7 +92,7 @@ header{
 
 section{
   position: relative;
-  height: 100px;
+  height: 180px;
 }
 
 /* -----------------------[ AGENDA ] ---------------------- */
@@ -130,7 +130,7 @@ section{
   margin-top:16px;
 
   display: inline;
-  text-align: center;   
+  text-align: center;
 }
 .agenda-header-day span{
   color: #ff5858;
@@ -145,26 +145,49 @@ section{
   top:100px;
   left:-62px;
 }
-
 .nextButton{
   position: absolute;
   top:100px;
   right:-62px;
 }
 
+.lastButton:hover{
+	transition:all 0.1s cubic-bezier(.62,.06,.49,.96) 0s;
+	transform-origin: right ;
+	transform: perspective( 600px ) rotateY( 32deg );
+}
+.nextButton:hover{
+	transition:all 0.1s cubic-bezier(.62,.06,.49,.96) 0s;
+	transform-origin:left;
+	transform: perspective( 600px ) rotateY( -32deg );
+}
+
+table{
+	font-family: 'avenir next';
+	font-size: 0.9em;
+	width:100%;
+	height: 100%;
+}
+tr{
+	vertical-align: top;
+}
+
+td{
+	width: 16.66%;
+	padding:12px;
+}
+
+.rdv-time{
+	color:rgb(77,180,253);
+}
+.rdv-patient{
+	color:#3F3F3F;
+}
+
 /* -----------------------[ FOOTER ] ---------------------- */
 
 footer{
-  background-color: WHITE;
-  margin-top:50px;
+  background-color: rgb(239, 239, 239);
+  margin-top:180px;
   height: 400px;
 }
-
-
-
-
-
-
-
-
-
