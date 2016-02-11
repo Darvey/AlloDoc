@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 try{
 	$bdd = new PDO ('mysql:host=localhost;dbname=docapp', 'root', 'root');
 }
@@ -13,7 +15,7 @@ if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 		$password = md5($_POST['s_pass']);
 		$mail = $_POST['s_mail'];
 
-		$req = $bdd->prepare('SELECT p_mdp FROM patient WHERE p_mail = (:mail) LIMIT 1;');
+		$req = $bdd->prepare('SELECT * FROM patient WHERE p_mail = (:mail) LIMIT 1;');
 
 		$req->execute(array("mail" => $mail));
 		
@@ -22,7 +24,19 @@ if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 		if($res['p_mdp'] != $password) {
 			echo 'Probleme Mail/Mot de passe';
 		} else{
-			echo "Vous etes connecté";
+			$_SESSION["id"] = $res['p_id'];
+			$_SESSION["nom"] = $res['p_nom'];
+			$_SESSION["prenom"] = $res['p_prenom'];
+
+			$req = $bdd->prepare('SELECT * FROM rdv WHERE idPatient = (:id) ORDER BY jour;');
+			$req->execute(array("id" => $_SESSION["id"]));
+			echo "Vos différents rendez-vous sont : <br>";
+			while($res = $req->fetch()){
+				$doc = $bdd->prepare('SELECT m_nom FROM medecin WHERE m_id = (:id);');
+				$doc->execute(array("id" => $res['idMedecin']));
+				$resM = $doc->fetch();
+				echo "avec Dr {$resM['m_nom']} le {$res['jour']} à {$res['heure']} <br>";
+			}
 		}
 	}
 }

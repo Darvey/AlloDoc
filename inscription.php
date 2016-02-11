@@ -37,7 +37,7 @@
       </fieldset>
 
       <fieldset>
-         <label for="prenom">prenom </label>
+         <label for="prenom">Prenom </label>
          <input type="text" name="s_prenom">
       </fieldset>
 
