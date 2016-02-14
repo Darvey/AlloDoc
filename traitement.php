@@ -1,24 +1,24 @@
-<?php 
+<?php
 session_start();
 
 try{
 	$bdd = new PDO ('mysql:host=localhost;dbname=docapp', 'root', 'root');
 }
 catch(Exception $e){
-  die('Erreur :'.$e->getMessage());
+  	die('Erreur :'.$e->getMessage());
 }
 
 if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
-		
+
 	if(!empty($_POST['s_mail']) && !empty($_POST['s_pass'])) {
-	
+
 		$password = md5($_POST['s_pass']);
 		$mail = $_POST['s_mail'];
 
 		$req = $bdd->prepare('SELECT * FROM patient WHERE p_mail = (:mail) LIMIT 1;');
 
 		$req->execute(array("mail" => $mail));
-		
+
 		$res = $req->fetch();
 
 		if($res['p_mdp'] != $password) {
@@ -37,12 +37,15 @@ if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 				$resM = $doc->fetch();
 				echo "avec Dr {$resM['m_nom']} le {$res['jour']} à {$res['heure']} <br>";
 			}
+
+			header('location: recherche.php');
+			echo "Vous etes connecté";
 		}
 	}
 }
 
 if(ISSET($_POST['Inscription'])){
-	//On creer les variables
+	//On crée les variables
 	$prenom =   $_POST['s_prenom'];
 	$nom = $_POST['s_nom'];
 	$password = md5($_POST['s_pass']);

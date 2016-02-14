@@ -1,5 +1,6 @@
 <?php
 
+	session_start();
 	require_once 'includes/htmlElmt.php';
 
 	displayHead("Acceuil");

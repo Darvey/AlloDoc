@@ -32,11 +32,10 @@ header{
 	transition: all 0.5s;
 }
 .header-shrink{
-
 	z-index: 4;
-    position:fixed;
+	position:fixed;
 	height: 0px;
-    top:0;
+	top:0;
 	color: #ff5858;
 }
 
