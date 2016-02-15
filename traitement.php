@@ -15,31 +15,46 @@ if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 		$password = md5($_POST['s_pass']);
 		$mail = $_POST['s_mail'];
 
-		$req = $bdd->prepare('SELECT * FROM patient WHERE p_mail = (:mail) LIMIT 1;');
-
+		if(isset($_POST['medecin'])) {
+			$req = $bdd->prepare('SELECT * FROM medecin WHERE m_mail = (:mail) LIMIT 1;');
+		} else{
+			$req = $bdd->prepare('SELECT * FROM patient WHERE p_mail = (:mail) LIMIT 1;');
+		}
+		
 		$req->execute(array("mail" => $mail));
 
 		$res = $req->fetch();
 
-		if($res['p_mdp'] != $password) {
-			echo 'Probleme Mail/Mot de passe';
-		} else{
-			$_SESSION["id"] = $res['p_id'];
-			$_SESSION["nom"] = $res['p_nom'];
-			$_SESSION["prenom"] = $res['p_prenom'];
-
-			$req = $bdd->prepare('SELECT * FROM rdv WHERE idPatient = (:id) ORDER BY jour;');
-			$req->execute(array("id" => $_SESSION["id"]));
-			echo "Vos différents rendez-vous sont : <br>";
-			while($res = $req->fetch()){
-				$doc = $bdd->prepare('SELECT m_nom FROM medecin WHERE m_id = (:id);');
-				$doc->execute(array("id" => $res['idMedecin']));
-				$resM = $doc->fetch();
-				echo "avec Dr {$resM['m_nom']} le {$res['jour']} à {$res['heure']} <br>";
+		if(isset($_POST['medecin'])) {
+			if($res['m_mdp'] != $password) {
+				echo 'Probleme Mail/Mot de passe';
+			} else{
+				$_SESSION["id"] = $res['m_id'];
+				$_SESSION["nom"] = $res['m_nom'];
+				$_SESSION["prenom"] = $res['m_prenom'];
+				
+				header('location: compteMedecin.php');
 			}
+		} else {
+			if($res['p_mdp'] != $password) {
+				echo 'Probleme Mail/Mot de passe';
+			} else{
+				$_SESSION["id"] = $res['p_id'];
+				$_SESSION["nom"] = $res['p_nom'];
+				$_SESSION["prenom"] = $res['p_prenom'];
 
-			header('location: recherche.php');
-			echo "Vous etes connecté";
+				/*$req = $bdd->prepare('SELECT * FROM rdv WHERE idPatient = (:id) ORDER BY jour;');
+				$req->execute(array("id" => $_SESSION["id"]));
+				echo "Vos différents rendez-vous sont : <br>";
+				while($res = $req->fetch()){
+					$doc = $bdd->prepare('SELECT m_nom FROM medecin WHERE m_id = (:id);');
+					$doc->execute(array("id" => $res['idMedecin']));
+					$resM = $doc->fetch();
+					echo "avec Dr {$resM['m_nom']} le {$res['jour']} à {$res['heure']} <br>";
+				}*/
+
+				header('location: recherche.php');
+			}
 		}
 	}
 }
@@ -51,11 +66,21 @@ if(ISSET($_POST['Inscription'])){
 	$password = md5($_POST['s_pass']);
 	$mail = $_POST['s_mail'];
 	$ville = $_POST['s_city'];
+	
+	if(isset($_POST['medecin'])) {
+		$spe = $_POST['s_spé'];
+		
+		$req = $bdd->prepare('INSERT INTO `medecin`(`m_nom`, `m_prenom`, `m_ville`, `m_mail`, `m_mdp`, `m_spe`) VALUES(:nom, :prenom, :ville, :mail, :password, :spe)');
 
-	$req = $bdd->prepare('INSERT INTO `patient`(`p_nom`, `p_prenom`, `p_ville`, `p_mail`, `p_mdp`) VALUES (:nom, :prenom, :ville, :mail, :password)');
+		$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville, "spe" => $spe));
+	
+		header('Location: compteMedecin.php'); 
+	} else {
+		$req = $bdd->prepare('INSERT INTO `patient`(`p_nom`, `p_prenom`, `p_ville`, `p_mail`, `p_mdp`) VALUES (:nom, :prenom, :ville, :mail, :password)');
 
-	$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville));
-
-	echo "Inscription effectué !";
+		$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville));
+		
+		echo "Inscription effectué !";
+	}
 }
 ?>

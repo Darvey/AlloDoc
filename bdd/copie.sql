@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Feb 11, 2016 at 11:43 AM
+-- Generation Time: Feb 15, 2016 at 09:10 PM
 -- Server version: 5.5.41-log
 -- PHP Version: 5.6.8
 
@@ -64,16 +64,19 @@ CREATE TABLE IF NOT EXISTS `medecin` (
   `m_ville` varchar(30) CHARACTER SET utf8 NOT NULL,
   `m_cp` int(6) NOT NULL,
   `m_adresse` varchar(100) NOT NULL,
-  `m_telephone` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `m_telephone` int(11) NOT NULL,
+  `m_mail` text NOT NULL,
+  `m_mdp` text NOT NULL,
+  `m_spe` text NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `medecin`
 --
 
-INSERT INTO `medecin` (`m_id`, `m_nom`, `m_prenom`, `m_ville`, `m_cp`, `m_adresse`, `m_telephone`) VALUES
-(1, 'Pasteur', 'Louis', 'Besançon', 25000, '7 rue des granges', 345657899),
-(2, 'Rousseau', 'Jean-Jaques', 'Paris', 75005, '5eme arrondissement\r\nrue Thomas Hobbes', 345667788);
+INSERT INTO `medecin` (`m_id`, `m_nom`, `m_prenom`, `m_ville`, `m_cp`, `m_adresse`, `m_telephone`, `m_mail`, `m_mdp`, `m_spe`) VALUES
+(1, 'Pasteur', 'Louis', 'Besançon', 25000, '7 rue des granges', 345657899, '', '', ''),
+(2, 'Rousseau', 'Jean-Jaques', 'Paris', 75005, '5eme arrondissement\r\nrue Thomas Hobbes', 345667788, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -88,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `patient` (
   `p_ville` varchar(30) NOT NULL,
   `p_mail` text NOT NULL,
   `p_mdp` text NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `patient`
@@ -162,12 +165,12 @@ MODIFY `h_id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 -- AUTO_INCREMENT for table `medecin`
 --
 ALTER TABLE `medecin`
-MODIFY `m_id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `m_id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-MODIFY `p_id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+MODIFY `p_id` int(8) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

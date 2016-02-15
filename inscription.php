@@ -6,6 +6,7 @@
 
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
    <script type='text/javascript' src="js/rotateForm.js"></script>
+   <script type='text/javascript' src="js/formulaireCacher.js"></script>
 </head>
 
 <body>
@@ -30,7 +31,7 @@
 
 <div class="switcher" >
 
-   <form action="traitement.php" method="post" class="inscription-form">
+   <form action="traitement.php" method="post" class="inscription-form">	
       <fieldset>
          <label for="prenom">Nom </label>
          <input type="text" name="s_nom">
@@ -60,6 +61,15 @@
          <label for="pass">Mot de passe </label>
          <input type="password" name="s_pass"/>
       </fieldset>
+	  
+	  <fieldset>
+		<input style="margin: -90px" type="checkbox" id="medecin" name="medecin" onclick="cacherField()" >Je suis un médecin<br>
+	  </fieldset>
+		
+	  <fieldset id="spe" style="visibility:hidden;">
+         <label for="pass">Spécialité </label>
+         <input type="text" name="s_spé"/>
+      </fieldset>
 
       <fieldset>
          <input class = "button-connect" type="submit" name="Inscription" value="Inscription"/>
@@ -76,6 +86,10 @@
          <label for="pass"> Mot de passe </label>
          <input type="password" name="s_pass"/>
       </fieldset>
+	  
+	  <fieldset>
+		<input style="margin: -90px" type="checkbox" id="medecin" name="medecin" onclick="cacherField()" >Je suis un médecin<br>
+	  </fieldset>
 
       <fieldset>
          <input class = "button-connect" type="submit" name="Connexion" value="Connexion"/>
