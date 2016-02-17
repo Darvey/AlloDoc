@@ -67,20 +67,34 @@ if(ISSET($_POST['Inscription'])){
 	$mail = $_POST['s_mail'];
 	$ville = $_POST['s_city'];
 	
-	if(isset($_POST['medecin'])) {
-		$spe = $_POST['s_spé'];
-		
-		$req = $bdd->prepare('INSERT INTO `medecin`(`m_nom`, `m_prenom`, `m_ville`, `m_mail`, `m_mdp`, `m_spe`) VALUES(:nom, :prenom, :ville, :mail, :password, :spe)');
-
-		$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville, "spe" => $spe));
 	
-		header('Location: compteMedecin.php'); 
+	//vérification que le mail n'existe pas déjà
+	if(isset($_POST['medecin'])) {
+		$verif = $bdd->prepare('SELECT * FROM medecin WHERE m_mail = :mail');
 	} else {
-		$req = $bdd->prepare('INSERT INTO `patient`(`p_nom`, `p_prenom`, `p_ville`, `p_mail`, `p_mdp`) VALUES (:nom, :prenom, :ville, :mail, :password)');
+		$verif = $bdd->prepare('SELECT * FROM patient WHERE p_mail = :mail');
+	}
+	$verif->execute(array("mail"=>$mail));
+	
+	if ($verif->fetch()){
+		echo "mail deja existant";
+	} else {	
+	
+		if(isset($_POST['medecin'])) {
+			$spe = $_POST['s_spé'];
+			
+			$req = $bdd->prepare('INSERT INTO `medecin`(`m_nom`, `m_prenom`, `m_ville`, `m_mail`, `m_mdp`, `m_spe`) VALUES(:nom, :prenom, :ville, :mail, :password, :spe)');
 
-		$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville));
+			$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville, "spe" => $spe));
 		
-		echo "Inscription effectué !";
+			header('Location: compteMedecin.php'); 
+		} else {
+			$req = $bdd->prepare('INSERT INTO `patient`(`p_nom`, `p_prenom`, `p_ville`, `p_mail`, `p_mdp`) VALUES (:nom, :prenom, :ville, :mail, :password)');
+
+			$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville));
+			
+			echo "Inscription effectué !";
+		}
 	}
 }
 ?>
