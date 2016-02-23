@@ -1,7 +1,21 @@
 <?php
-	session_start();	
+	session_start();
+	require_once 'includes/config.php';
+	$month = false;
+	$year = false;
+	$day = null;
+
+	if ( isset($_GET['m']) ){
+	  $month = $_GET['m'];
+	}
+	if ( isset($_GET['y']) )  {
+	  $year = $_GET['y'];
+	}
+	if ( isset ($_GET['d']) ){
+	  $day = $_GET['d'];
+	}
 ?>
-	
+
 
 <head>
   <meta charset="utf-8">
@@ -20,8 +34,16 @@
 	<header>
 		<a class="title" href="index.php"> Allodoc. </a>
 	</header>
-	
-	
+
+
+	<?php displayMedecin($day); ?>
+
+	<section>
+		<form action="index.php" method="post" >
+			<textarea name="nom" rows=4  placeholder="Ecrivez une courte description de vos symptomes ou la raison pour laquelle vous prennez rendez vous dans ce cadre"></textarea>
+			<input type="submit" value="VALIDER"/>
+		</form>
+	</section>
+
 
 </body>
-

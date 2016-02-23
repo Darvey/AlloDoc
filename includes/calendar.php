@@ -120,7 +120,7 @@ function displayMedecin($day)
 	if(null == $day){
 		$day = strtotime("last Monday");
 	}
-	
+
 	$dates = array();
 	for($i=0; $i<7; $i++){
 		$dates[$i] = $day + ($i*3600*24);
@@ -138,7 +138,7 @@ function displayMedecin($day)
    echo'    <tbody class = "calendar-body">';
    echo'       <tr>';
    echo'         <td>';
-   echo'           <a class = "s-horraire" href = "#"> 8h00 </a><br>';
+   echo'           <a class = "s-horraire" href = "rdv.php"> 8h00 </a><br>';
    echo'           <a class = "s-horraire" href = "#"> 9h30 </a><br>';
    echo'           <a class = "s-horraire" href = "#"> 10h00 </a><br>';
    echo'           <a class = "s-horraire" href = "#"> 11h30 </a><br>';

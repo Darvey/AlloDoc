@@ -1,14 +1,39 @@
 <?php
 
-function getMedByAdresse($p_ville,$p_lat,$p_lng){
+require_once 'config.php';
 
+function getMedecinById($id){
+
+	$result = array();
+
+	$sql ='
+		SELECT m_nom , m_prenom , m_ville , m_cp , m_adresse
+		FROM medecin
+		WHERE m_id = '.$id.'
+	';
+	$querry = mysql_query($sql) or die("Une requête à échouée.");
+
+	while ($row = mysql_fetch_assoc($querry))
+	{
+		$result = $row;
+	}
+	return $result;
+}
+
+function getRDVbyPatientId($id){
    $result = array();
    $sql = '
-      SELECT m_nom , m_prenom , m_ville , m_cp , m_adresse
-      FROM MEDECIN
-      WHERE m_ville = '.$ville.'
-      GROUP BY
-	';
+      SELECT jour,heure,idMedecin
+      FROM rdv
+      WHERE idPatient = '.$id.'
+   ';
+   $querry = mysql_query($sql) or die("Une requête à échouée.");
+
+   while ($row = mysql_fetch_assoc($querry))
+   {
+      $result[] = $row;
+   }
+   return $result;
 }
 
 ?>

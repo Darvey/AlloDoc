@@ -1,0 +1,33 @@
+@font-face {
+	font-family: 'Otama';
+	src: url('../font/Otama.otf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+header{
+   position:relative;
+   top:0px;
+
+   width: 100%;
+   height: 67px;
+
+   font-weight: lighter;
+   background-color: #ff5858;
+   color: WHITE;
+
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   transition: all 0.5s;
+}
+
+.title{
+  position: absolute;
+  padding: 0.4em;
+  font: 2.2em "Otama";
+}

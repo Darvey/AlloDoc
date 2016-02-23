@@ -30,3 +30,131 @@ header{
   padding: 0.4em;
   font: 2.2em "Otama";
 }
+
+/* -------------------------- BLOC MEDECIN ------------------------- */
+
+.blocMedecin
+{
+  position: relative;
+  font-family: 'avenir next';
+
+  margin-top: 2em;
+
+  width: 85%;
+  height: 14em;
+}
+
+.infosMedecin
+{
+	position: relative;
+	padding-left: 10%px;
+	color: #464646;
+	float: left;
+}
+
+
+.nameMedecin
+{
+	font-family:"Otama";
+	font-size: 1.6em;
+	color: rgb(77, 77, 77);
+}
+
+.icnMedecin
+{
+	margin: 20px 20px 20px 20px;
+	float: left;
+}
+
+.nextWeek_btn
+{
+  position: relative;
+  top:41%;
+  right: 0.7em;
+
+  float: right;
+
+  font: 2em 'Otama';
+  font-weight: bold;
+  color:#FF5544;
+}
+
+/* -------------------------- BLOC MEDECIN - CALENDRIER ------------------------- */
+
+.calendar
+{
+	position: relative;
+	right: 3.2em;
+
+
+	float:right;
+
+	margin-top: 0.6em;
+	margin-bottom: 2em;
+}
+
+.calendar-head
+{
+	color:#464646;
+	margin:0;
+	padding: 0;
+}
+.calendar-head th
+{
+	font: 1em 'Otama';
+	min-width:4em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.calendar-head p
+{
+	font: 1.2em "avenir";
+	line-height: 0.8em;
+	color:  #ff5858;
+	padding: 0;
+	margin:0px 0px 5px 0px;
+}
+
+.calendar-body
+{
+	text-align: center;
+}
+.s-horraire
+{
+	font-weight: lighter;
+	line-height:1.3em;
+	color:#464646;
+
+	transition: all 0.1s linear 0s;
+}
+.s-horraire:hover
+{
+	color: #FF5544;
+}
+
+/* -------------------------- TEXT AREA ------------------------- */
+
+section{
+	display: inline-block;
+	text-align: center;
+}
+textarea{
+	width: 60%;
+	padding: 8px;
+	border:1px solid rgb(77,180,253);
+	margin: 40px;
+}
+
+textarea:focus{
+	outline: none;
+}
+
+input{
+	width: 60%;
+	height: 40px;
+	font-family: 'avenir next';
+	font-weight: lighter;
+	color:WHITE;
+	background-color: rgb(77,180,253);
+	border:none;
+}
