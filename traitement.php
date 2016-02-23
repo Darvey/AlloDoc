@@ -97,4 +97,16 @@ if(ISSET($_POST['Inscription'])){
 		}
 	}
 }
+
+if(ISSET($_POST['rdv_button'])){
+	$rdv_heure = $_POST['rdv_heure'];
+	$rdv_jour = $_POST['rdv_jour'];
+	$rdv_med = $_POST['rdv_medId'];
+	$rdv_pat = $_POST['rdv_patId'];
+
+	$req = $bdd->prepare('INSERT INTO `rdv`(`idMedecin`, `idPatient`, `jour`, `heure`) VALUES(:idMedecin, :idPatient, :jour, :heure)');
+	$req->execute(array("idMedecin" => $rdv_med, "idPatient" => $rdv_pat, "jour" => $rdv_jour, "heure" => $rdv_heure));
+}
+
+
 ?>

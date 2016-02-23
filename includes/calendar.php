@@ -137,15 +137,16 @@ function displayMedecin($day)
    calendarHead($dates);
    echo'    <tbody class = "calendar-body">';
    echo'       <tr>';
-   echo'         <td>';
-   echo'           <a class = "s-horraire" href = "rdv.php"> 8h00 </a><br>';
-   echo'           <a class = "s-horraire" href = "#"> 9h30 </a><br>';
-   echo'           <a class = "s-horraire" href = "#"> 10h00 </a><br>';
-   echo'           <a class = "s-horraire" href = "#"> 11h30 </a><br>';
-   echo'           <a class = "s-horraire" href = "#"> 14h30 </a><br>';
-   echo'           <a class = "s-horraire" href = "#"> 15h30 </a><br>';
-   echo'           <a class = "s-horraire" href = "#"> 16h30 </a><br>';
-   echo'          </td>';
+   for($cnt=0;$cnt<6;$cnt++)
+   {
+      echo'    <td>';
+      $events = getHorairesDispo(date('d',$dates[$cnt]),date('m',$dates[$cnt]),date('Y',$dates[$cnt]));
+      foreach ($events as $e)
+      {
+         echo '   <a class = "s-horraire" href="rdv.php">'.tohm($e['h_time']).'</a><br>';
+      }
+      echo'       </td>';
+   }
    echo'         </tr>';
    echo'       </tbody>';
    echo'      </table>';

@@ -118,10 +118,11 @@ header{
 .calendar-body
 {
 	text-align: center;
+	vertical-align: top;
 }
 .s-horraire
 {
-	font-weight: lighter;
+	font-weight:normal;
 	line-height:1.3em;
 	color:#464646;
 
