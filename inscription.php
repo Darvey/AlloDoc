@@ -31,7 +31,7 @@
 
 <div class="switcher" >
 
-   <form action="traitement.php" method="post" class="inscription-form">	
+   <form action="traitement.php" method="post" class="inscription-form">
       <fieldset>
          <label for="prenom">Nom </label>
          <input type="text" name="s_nom">
@@ -61,11 +61,11 @@
          <label for="pass">Mot de passe </label>
          <input type="password" name="s_pass"/>
       </fieldset>
-	  
+
 	  <fieldset>
 		<input style="margin: -90px" type="checkbox" id="medecin" name="medecin" onclick="cacherField()" >Je suis un médecin<br>
 	  </fieldset>
-		
+
 	  <fieldset id="spe" style="visibility:hidden;">
          <label for="pass">Spécialité </label>
          <input type="text" name="s_spé"/>
@@ -86,7 +86,7 @@
          <label for="pass"> Mot de passe </label>
          <input type="password" name="s_pass"/>
       </fieldset>
-	  
+
 	  <fieldset>
 		<input style="margin: -90px" type="checkbox" id="medecin" name="medecin" onclick="cacherField()" >Je suis un médecin<br>
 	  </fieldset>

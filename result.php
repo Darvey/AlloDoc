@@ -53,6 +53,7 @@
   <div class="blocMedecin-first"></div>
 
 <?php
+
     displayMedecin($day);
     displayMedecin($day);
     displayMedecin($day);

@@ -32,8 +32,9 @@ if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 				$_SESSION["id"] = $res['m_id'];
 				$_SESSION["nom"] = $res['m_nom'];
 				$_SESSION["prenom"] = $res['m_prenom'];
+				$_SESSION["pro"] = 1;
 
-				header('location: compteMedecin.php');
+				header('location: compte.php');
 			}
 		} else {
 			if($res['p_mdp'] != $password) {
@@ -42,6 +43,9 @@ if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 				$_SESSION["id"] = $res['p_id'];
 				$_SESSION["nom"] = $res['p_nom'];
 				$_SESSION["prenom"] = $res['p_prenom'];
+				$_SESSION["pro"] = 0;
+
+				header('location: compte.php');
 
 				/*$req = $bdd->prepare('SELECT * FROM rdv WHERE idPatient = (:id) ORDER BY jour;');
 				$req->execute(array("id" => $_SESSION["id"]));
@@ -106,6 +110,8 @@ if(ISSET($_POST['rdv_button'])){
 
 	$req = $bdd->prepare('INSERT INTO `rdv`(`idMedecin`, `idPatient`, `jour`, `heure`) VALUES(:idMedecin, :idPatient, :jour, :heure)');
 	$req->execute(array("idMedecin" => $rdv_med, "idPatient" => $rdv_pat, "jour" => $rdv_jour, "heure" => $rdv_heure));
+
+
 }
 
 

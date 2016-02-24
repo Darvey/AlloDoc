@@ -36,4 +36,8 @@ function getRDVbyPatientId($id){
    return $result;
 }
 
+function addRDV($p_id,$m_id,$jour,$heure){
+   
+}
+
 ?>
