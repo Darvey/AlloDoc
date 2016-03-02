@@ -17,6 +17,7 @@
 </head>
 
 <?php
+	session_start();
   require_once 'includes/config.php';
   $month = false;
   $year = false;
@@ -54,16 +55,10 @@
 
 <?php
 
-    displayMedecin($day);
-    displayMedecin($day);
-    displayMedecin($day);
-    displayMedecin($day);
-    displayMedecin($day);
-    displayMedecin($day);
-    displayMedecin($day);
-    displayMedecin($day);
-    displayMedecin($day);
-    displayMedecin($day);
+	for($i=0;$i<sizeof($_SESSION["Medecin"]);$i++){
+		displayMedecin($day, $_SESSION["Medecin"][$i]);
+		echo $_SESSION["Medecin"][$i];
+	}
   ?>
 
   <div id="blocMap">

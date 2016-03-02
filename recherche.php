@@ -28,10 +28,11 @@
 		<h1> Trouvez votre medecin </h1>
 		<p> Et prenez rendez vous immédiatement </p>
 		<div class="form-recherche">
-			<form  method="post" >
-				<input type="text" placeholder="spécialité">
-				<input type="text" id="pac-input" onFocus="geolocate()">
-				<input type="submit" value="Rechercher" onclick="popupGPS()"/>
+			<form  method="post" action="traitement.php">
+				<input type="text" name="spe" placeholder="Spécialité">
+				<input type="text" name="ville" placeholder="Ville">
+				<input type="text" id="pac-input" placeholder="Adresse" onFocus="geolocate()">
+				<input type="submit" name="Rechercher" value="Rechercher" /><!--onclick="popupGPS()"--> 
 			</form>
 		</div>
 	</div>

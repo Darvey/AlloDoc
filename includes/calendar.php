@@ -112,9 +112,8 @@ function getMedecin($id){
 }
 
 
-function displayMedecin($day)
+function displayMedecin($day, $id)
 {
-	$id = 2;
 	$medecin = getMedecin($id);
 
 	if(null == $day){
