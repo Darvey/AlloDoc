@@ -31,7 +31,7 @@
 			<form  method="post" action="traitement.php">
 				<input type="text" name="spe" placeholder="Spécialité">
 				<input type="text" name="ville" placeholder="Ville">
-				<input type="text" id="pac-input" placeholder="Adresse" onFocus="geolocate()">
+				<input type="text" name="adresse" id="pac-input" placeholder="Adresse" onFocus="geolocate()">
 				<input type="submit" name="Rechercher" value="Rechercher" /><!--onclick="popupGPS()"--> 
 			</form>
 		</div>

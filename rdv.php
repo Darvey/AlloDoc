@@ -36,7 +36,7 @@
 	</header>
 
 
-	<?php displayMedecin($day); ?>
+	<?php displayMedecin($day, 2); ?>
 
 	<section>
 		<form action="index.php" method="post" >

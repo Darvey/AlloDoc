@@ -115,8 +115,10 @@ if(ISSET($_POST['rdv_button'])){
 }
 
 if(ISSET($_POST['Rechercher'])){
+	unset($_SESSION["Medecin"]);
 	$ville = $_POST["ville"];
 	$spe = $_POST["spe"];
+	
 
 	$req = $bdd->prepare('SELECT m_id FROM medecin WHERE m_spe = (:spe) AND m_ville = (:ville)');
 	$req->execute(array("spe" => $spe, "ville" => $ville));
@@ -125,6 +127,9 @@ if(ISSET($_POST['Rechercher'])){
 		$_SESSION["Medecin"][$i] = $res['m_id'];
 		$i = $i +1;
 	}
+	
+	$_SESSION["Adresse"] = $_POST["ville"] . ' ' . $_POST["adresse"];
+	
 	header('location: result.php'); 
 }
 

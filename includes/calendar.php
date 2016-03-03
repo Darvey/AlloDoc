@@ -11,20 +11,16 @@ function tohm($heure) {
 
 
 /// Récupère les horaires disponible d'un medecin pour un jour donné
-function getHorairesDispo($day, $month, $year)
+function getHorairesDispo($day, $month, $year, $id)
 {
 	$result = array();
 
 	$date = $year.'-'.$month.'-'.$day;
 	//$formatDate = $day.'-'.$month.'-'.$year;
 
-	$sql = '
-		SELECT h_time
-		FROM HORAIRE
-		WHERE h_date = \''.$date.'\'
-	';
+	$sql = 'SELECT h_time FROM HORAIRE WHERE h_m_id = '.$id.' ORDER BY h_time';
 
-	$querry = mysql_query($sql) or die("Une requête à échouée.");
+	$querry = mysql_query($sql) or die(mysql_error());
 
 	while ($row = mysql_fetch_assoc($querry))
 	{
@@ -139,7 +135,7 @@ function displayMedecin($day, $id)
    for($cnt=0;$cnt<6;$cnt++)
    {
       echo'    <td>';
-      $events = getHorairesDispo(date('d',$dates[$cnt]),date('m',$dates[$cnt]),date('Y',$dates[$cnt]));
+      $events = getHorairesDispo(date('d',$dates[$cnt]),date('m',$dates[$cnt]),date('Y',$dates[$cnt]), $id);
       foreach ($events as $e)
       {
          echo '   <a class = "s-horraire" href="rdv.php">'.tohm($e['h_time']).'</a><br>';

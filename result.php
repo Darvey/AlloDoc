@@ -57,7 +57,6 @@
 
 	for($i=0;$i<sizeof($_SESSION["Medecin"]);$i++){
 		displayMedecin($day, $_SESSION["Medecin"][$i]);
-		echo $_SESSION["Medecin"][$i];
 	}
   ?>
 
