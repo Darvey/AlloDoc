@@ -19,6 +19,7 @@
 
    <header>
       <a class="title" href="index.php"> Allodoc. </a>
+	  <a class="deconnexion" href="deconnection.php" >Se déconnecter</a>
    </header>
 
    <section>

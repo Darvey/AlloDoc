@@ -17,7 +17,7 @@ function displayHeader()
 {
 	echo '<header>';
 	echo '<div class = "title">  <a class="btnAccueil" href="index.php" >Allodoc. </a></div>';
-	echo '<a class = "btnConnexion" href="connect.php">Connexion</a>';
+	echo '<a class = "btnConnexion" href="inscription.php">Connexion</a>';
 	echo '</header>';
 }
 

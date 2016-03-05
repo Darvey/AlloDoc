@@ -31,3 +31,11 @@ header{
   padding: 0.4em;
   font: 2.2em "Otama";
 }
+
+.deconnexion{
+	position: absolute;
+	right: 1%;
+
+  	padding: 1em;
+  	font: 1.2em "avenir next";
+}

@@ -19,9 +19,16 @@
 </head>
 
 <body>
+<?php 
+session_start();
+
+if (!$_SESSION["connect"]){
+	header('location: inscription.php');
+} ?>
 	<header>
 		<a class="title" href="index.php"> Allodoc. </a>
-		<a class="textInscription" href="inscription.php" >Mon compte</a>
+		<a class="textInscription" href="compte.php" >Mon compte</a>
+		<a class="deconnexion" href="deconnection.php" >Se déconnecter</a>
 	</header>
 
 	<div class='text-recherche'>

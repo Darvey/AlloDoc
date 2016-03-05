@@ -43,6 +43,14 @@ body{
 
 .textInscription{
  	position: absolute;
+	right: 10%;
+
+  	padding: 1em;
+  	font: 1.2em "avenir next";
+}
+
+.deconnexion{
+	position: absolute;
 	right: 1%;
 
   	padding: 1em;

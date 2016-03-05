@@ -33,6 +33,7 @@ if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 				$_SESSION["nom"] = $res['m_nom'];
 				$_SESSION["prenom"] = $res['m_prenom'];
 				$_SESSION["pro"] = 1;
+				$_SESSION["connect"] = true;
 
 				header('location: compte.php');
 			}
@@ -44,6 +45,7 @@ if(!empty($_POST['Connexion'])){ // Si le formulaire est envoyé.
 				$_SESSION["nom"] = $res['p_nom'];
 				$_SESSION["prenom"] = $res['p_prenom'];
 				$_SESSION["pro"] = 0;
+				$_SESSION["connect"] = true;
 
 				header('location: compte.php');
 
