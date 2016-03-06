@@ -51,6 +51,11 @@
          <label for="ville">Adresse </label>
          <input type="text" name="s_adress"/>
       </fieldset>
+	  
+	  <fieldset>
+         <label for="telephone">Telephone </label>
+         <input type="text" name="s_telephone"/>
+      </fieldset>
 
       <fieldset>
          <label for="mail">Mail </label>

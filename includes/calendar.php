@@ -94,7 +94,7 @@ function getMedecin($id){
 	$result = array();
 
 	$sql = '
-		SELECT m_nom , m_prenom , m_ville , m_cp , m_adresse
+		SELECT *
 		FROM MEDECIN
 		WHERE m_id = '.$id.'
 	';
@@ -127,6 +127,7 @@ function displayMedecin($day, $id)
    echo'<p class = "nameMedecin"> Dr '.$medecin[m_prenom].' '.$medecin[m_nom].'</p>';
    echo'<p> Spécialité : généraliste<br>';
    echo $medecin[m_adresse].' '.$medecin[m_ville].'</p>';
+   echo '<p>'.$medecin[m_telephone].'</p>';
 
    echo'</div>';
    calendarHead($dates);
