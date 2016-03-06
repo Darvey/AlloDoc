@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8">
-  <title>inscription</title>
+  <title>Inscription/Connexion</title>
   <link rel="stylesheet" href="stylesheets/connect.css"/>
   <link rel="stylesheet" href="stylesheets/normalize.css"/>
 

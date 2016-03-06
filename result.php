@@ -18,6 +18,10 @@
 
 <?php
 	session_start();
+	
+if (!$_SESSION["connect"]){
+	header('location: inscription.php');
+}
   require_once 'includes/config.php';
   $month = false;
   $year = false;
@@ -39,7 +43,7 @@
   <header>
     <a class="title" href="index.php"> Allodoc. </a>
     <a class="textInscription" href="inscription.php">Mon compte</a>
-    <a class="deconnexion" href="deconnexion.php">Se deconnecter</a>
+    <a class="deconnexion" href="deconnection.php">Se deconnecter</a>
   </header>
 
   <section>
@@ -66,14 +70,14 @@
     <div id="map"></div>
   </div>
 
-  <div id="blocSearch">
-    <a href='#' id="iconSearch"><img src="img/searchIcon.png" width="46px"></a>
-  		<form action="index.php" method="post" >
+  <!--<div id="blocSearch">
+    <a href='#' name="Rechercher" id="iconSearch"><img src="img/searchIcon.png" width="46px"></a>
+  		<form action="traitement.php" method="post" >
   		<table align="center" border="0" cellspacing="0"  cellpadding="0">
-        <td><input classe = "searchSpeciality" type="text" name="adresse" placeholder="Spécialité"></td>
-  			<td><input classe = "searchAdresse" type="text" name="adresse" placeholder="Adresse"></td>
+        <td><input classe = "searchSpeciality" type="text" name="spe" placeholder="Spécialité"></td>
+		<td><input classe = "searchSpeciality" type="text" name="ville" placeholder="Ville"></td>
   		</table>
-  </div>
+  </div>-->
 
 
 

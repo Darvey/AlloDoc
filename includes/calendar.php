@@ -11,14 +11,14 @@ function tohm($heure) {
 
 
 /// Récupère les horaires disponible d'un medecin pour un jour donné
-function getHorairesDispo($day, $month, $year, $id)
+function getHorairesDispo($day, $month, $year, $id, $jour)
 {
 	$result = array();
 
 	$date = $year.'-'.$month.'-'.$day;
 	//$formatDate = $day.'-'.$month.'-'.$year;
 
-	$sql = 'SELECT h_time FROM HORAIRE WHERE h_m_id = '.$id.' ORDER BY h_time';
+	$sql = 'SELECT h_time FROM HORAIRE WHERE h_m_id = '.$id.' AND h_jour = '.$jour.' ORDER BY h_time';
 
 	$querry = mysql_query($sql) or die(mysql_error());
 
@@ -125,7 +125,7 @@ function displayMedecin($day, $id)
    echo'<img src="img/128.png" class ="icnMedecin">';
    echo'<div class="infosMedecin">';
    echo'<p class = "nameMedecin"> Dr '.$medecin[m_prenom].' '.$medecin[m_nom].'</p>';
-   echo'<p> Spécialité : généraliste<br>';
+   echo'<p> Spécialité : '.$medecin[m_spe].'<br>';
    echo $medecin[m_adresse].' '.$medecin[m_ville].'</p>';
    echo '<p>'.$medecin[m_telephone].'</p>';
 
@@ -136,7 +136,7 @@ function displayMedecin($day, $id)
    for($cnt=0;$cnt<6;$cnt++)
    {
       echo'    <td>';
-      $events = getHorairesDispo(date('d',$dates[$cnt]),date('m',$dates[$cnt]),date('Y',$dates[$cnt]), $id);
+      $events = getHorairesDispo(date('d',$dates[$cnt]),date('m',$dates[$cnt]),date('Y',$dates[$cnt]), $id,$cnt);
       foreach ($events as $e)
       {
          echo '   <a class = "s-horraire" href="rdv.php">'.tohm($e['h_time']).'</a><br>';

@@ -1,5 +1,10 @@
+
 <?php
 session_start();
+	require_once 'includes/htmlElmt.php';
+
+	displayHead("Acceuil");
+	displayHeader();
 
 try{
 	$bdd = new PDO ('mysql:host=localhost;dbname=docapp', 'root', 'root');
@@ -96,11 +101,12 @@ if(ISSET($_POST['Inscription'])){
 
 			header('Location: compteMedecin.php');
 		} else {
-			$req = $bdd->prepare('INSERT INTO `patient`(`p_nom`, `p_prenom`, `p_ville`, `p_mail`, `p_mdp`, `p_telephone`) VALUES (:nom, :prenom, :ville, :mail, :password, :telephone)');
+			$req = $bdd->prepare('INSERT INTO `patient`(`p_nom`, `p_prenom`, `p_ville`, `p_mail`, `p_mdp`, `p_telephone`, `p_adresse`) VALUES (:nom, :prenom, :ville, :mail, :password, :telephone, :adresse)');
 
-			$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville,  "telephone" => $telephone));
+			$req->execute(array("nom" => $nom, "prenom" => $prenom, "password" => $password, "mail" => $mail, "ville" => $ville,  "telephone" => $telephone, "adresse" => $adresse));
 
 			echo "Inscription effectué !";
+			
 		}
 	}
 }

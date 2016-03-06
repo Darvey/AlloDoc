@@ -5,7 +5,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>inscription</title>
+  <title>Compte</title>
   <link rel="stylesheet" href="stylesheets/comptePatient.css"/>
   <link rel="stylesheet" href="stylesheets/normalize.css"/>
 
@@ -23,7 +23,7 @@
    </header>
 
    <section>
-      <h1> Mes informations personnelles </h1>
+      <h1> Mes informations</h1>
       <?php
          echo 'Nom : '.$_SESSION['nom'].'<br>';
          echo 'Prenom : '.$_SESSION['prenom'].'<br>';
@@ -32,7 +32,7 @@
       <?php
          $arrayRDV = getRDVbyPatientId($_SESSION['id']);
          foreach ($arrayRDV as $key) {
-            echo 'rendez vous le '.$key['jour'].' à '.$key['heure'].' avec le Dr ';
+            echo 'Rendez-Vous le '.$key['jour'].' à '.$key['heure'].' avec le Dr ';
             $drInfos = getMedecinById($key['idMedecin']);
             echo $drInfos['m_prenom'].' '.$drInfos['m_nom'].'<br>';
          }

@@ -5,6 +5,7 @@
 
 	displayHead("Acceuil");
 	displayHeader();
+	header('location: recherche.php');
 ?>
 
 Liens d'accès aux différentes pages du site : <br><br>
